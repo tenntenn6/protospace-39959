@@ -9,13 +9,13 @@ class PrototypesController < ApplicationController
   end
 
   def new
-    @prototypes = Prototype.new
+    @prototype = Prototype.new
   end
 
   def create
-    @prototypes =Prototype.new(prototype_params)
-    if @prototypes.save
-      redirect_to '/'
+    @prototype =Prototype.new(prototype_params)
+    if @prototype.save
+      redirect_to root_path
     else
       render :new, status: :unprocessable_entity
     end
